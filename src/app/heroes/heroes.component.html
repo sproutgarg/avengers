@@ -1,0 +1,28 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- before routing: this just added selected css to the selected hero in the list
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+  -->
+
+  <!-- with routing-->
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> 
+      {{hero.name}}
+      <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+    </a>
+  </li>
+</ul>
+
+<div>
+    <label>Hero name:
+      <input #heroName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>
+<hr/>
+
