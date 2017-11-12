@@ -7,11 +7,11 @@ export class MessageService {
 
   constructor() { }
 
-  addMessage(msg: string):void{
+  addMessage(msg: string): void {
     this.messages.push(msg);
   }
 
-  clear():void{
+  clear(): void {
     this.messages.length = 0;
   }
 }
